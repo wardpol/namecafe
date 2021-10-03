@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menú</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <style>
+        body { 
+            background-color: rgb(22, 4, 4);
+            color: #d9dee2;
+          }
+          
+          .table{
+            
+            color: #d9dee2;
+            }
+            .jumbotron{
+              /*background-image: url("https://d1uz88p17r663j.cloudfront.net/resized/d9f9eccdd87752c78993ef0c67e345d3_Cheseecake-de-fresa_1200_600.jpg");*/
+              background-image: url("https://recetastips.com/wp-content/uploads/2020/08/Cheescake-de-Fresa-Casero.jpg");
+              background-color: rgba(65, 13, 13, 0.7);
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-blend-mode: multiply;
+              background-attachment: fixed;
+            }
+            .container {
+                margin-top: 15px;
+            }
+            .card {
+                background-color: rgb(65, 13, 13);
+            }        
+    </style>
+  </head>
+  <body> 
+    <div class="container">
+    <div class="px-3 jumbotron jumbotron-fluid">
+        <h3 class="card py-2 px-4">Menú</h3>
+      <h4 class="text-center my-3">Pedidos</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Item</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Acción</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody id="items"></tbody>
+        <tfoot>
+          <tr id="footer">
+            <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+          </tr>
+        </tfoot>
+      </table>
+      <h4 class="text-center">Productos</h4>
+      <div class="row" id="cards"></div>
+    </div>
+    </div>
+
+    <template id="template-footer">
+        <th scope="row" colspan="2">Total productos</th>
+        <td>10</td>
+        <td>
+            <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+                vaciar todo
+            </button>
+        </td>
+        <td class="font-weight-bold">$ <span>5000</span></td>
+    </template>
+    
+    <template id="template-carrito">
+      <tr>
+        <th scope="row">id</th>
+        <td>Café</td>
+        <td>1</td>
+        <td>
+            <button class="btn btn-info btn-sm">
+                +
+            </button>
+            <button class="btn btn-danger btn-sm">
+                -
+            </button>
+        </td>
+        <td>$ <span>500</span></td>
+      </tr>
+    </template>
+
+    <template id="template-card">
+      <div class="col-12 mb-2 col-md-4">
+        <div class="card">
+            <img src="" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5>Titulo</h5>
+            <p>precio</p>
+            <button class="btn btn-dark">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
